@@ -1,0 +1,49 @@
+**Tablero Trello: Desarrollo de Base de Datos para Sistema de Gestión de Alquiler de Vehículos**
+
+1. **Listas Principales:**
+   - **Investigación y Planificación**
+   - **Diseño del Modelo de Datos**
+   - **Desarrollo de la Base de Datos**
+   - **Pruebas y Optimización**
+   - **Implementación en Producción**
+   - **Documentación**
+
+2. **Tarjetas en cada Lista:**
+
+   **Investigación y Planificación:**
+   - Identificar Requisitos de Datos: Definir las necesidades de datos para el sistema.
+   - Investigación de Tecnologías: Evaluar y seleccionar las herramientas de base de datos adecuadas.
+   - Planificación de Hitos: Establecer hitos iniciales y fechas límite aproximadas.
+
+   **Diseño del Modelo de Datos:**
+   - Crear Modelo Entidad-Relación (ER): Diseñar la estructura de la base de datos.
+   - Revisión del Modelo con el Equipo: Obtener retroalimentación y hacer ajustes según sea necesario.
+   - Validación con Requisitos: Asegurarse de que el modelo cumpla con todos los requisitos del sistema.
+
+   **Desarrollo de la Base de Datos:**
+   - Crear Tablas y Relaciones: Iniciar la implementación del modelo de datos en la base de datos.
+   - Implementar Procedimientos Almacenados: Desarrollar lógica de negocio en la base de datos.
+   - Integrar con la Aplicación: Trabajar en la integración con el sistema de aplicación.
+
+   **Pruebas y Optimización:**
+   - Crear Conjunto de Datos de Pruebas: Preparar datos simulados para pruebas.
+   - Realizar Pruebas de Funcionalidad: Verificar que la base de datos cumple con los requisitos.
+   - Optimización del Rendimiento: Identificar y abordar posibles cuellos de botella.
+
+   **Implementación en Producción:**
+   - Planificación de Implementación: Establecer el momento óptimo para la implementación.
+   - Migración de Datos: Transferir datos existentes al nuevo sistema.
+   - Validación Post-Implementación: Asegurarse de que la base de datos en producción funcione según lo previsto.
+
+   **Documentación:**
+   - Crear Documentación Técnica: Detallar la estructura de la base de datos y su funcionamiento.
+   - Crear Guía de Uso: Proporcionar información para el mantenimiento y la solución de problemas.
+
+3. **Hitos Principales:**
+   - **Finalización del Modelo de Datos**
+   - **Finalización del Desarrollo de la Base de Datos**
+   - **Éxito en Pruebas de Rendimiento**
+   - **Implementación Exitosa en Producción**
+   - **Documentación Completa y Revisada**
+
+Recuerda que estos hitos y tarjetas son sugerencias generales y pueden adaptarse según las necesidades específicas de tu proyecto y equipo. El tablero Trello proporciona una vista clara del progreso y facilita la colaboración entre los miembros del equipo.
