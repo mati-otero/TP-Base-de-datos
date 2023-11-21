@@ -1,1 +1,46 @@
+-- Inserts para Vehículos
+INSERT INTO Vehiculos (Modelo, Anio, TipoVehiculo, Estado, Kilometraje)
+VALUES
+    ('Toyota Corolla', 2022, 'Sedán', 'Disponible', 5000),
+    ('Honda CR-V', 2021, 'SUV', 'Disponible', 8000),
+    ('Ford Focus', 2020, 'Hatchback', 'Disponible', 6000),
+    -- Agregar 7 vehículos más según sea necesario
+;
+-- Inserts para Clientes
+INSERT INTO Clientes (Nombre, Direccion, Telefono)
+VALUES
+    ('Juan Pérez', 'Calle 123, Ciudad', '+1234567890'),
+    ('María González', 'Avenida XYZ, Ciudad', '+9876543210'),
+    ('Carlos Rodríguez', 'Calle ABC, Ciudad', '+1122334455'),
+    -- Agregar 7 clientes más según sea necesario
+;
 
+-- Inserts para Reservas
+INSERT INTO Reservas (ClienteID, VehiculoID, FechaInicio, FechaFin, EstadoReserva)
+VALUES
+    (1, 1, '2023-01-01', '2023-01-07', 'Confirmada'),
+    (2, 2, '2023-02-01', '2023-02-10', 'Confirmada'),
+    (3, 3, '2023-03-01', '2023-03-05', 'Confirmada');
+    -- Agregar reservas adicionales según sea necesario
+;
+
+-- Crear la tabla de lookup para Tipo de Combustible
+CREATE TABLE IF NOT EXISTS TipoCombustible (
+    TipoCombustibleID INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre VARCHAR(50) NOT NULL
+);
+
+-- Agregar columna de TipoCombustibleID a la tabla Vehiculos
+ALTER TABLE Vehiculos
+ADD COLUMN TipoCombustibleID INT,
+ADD FOREIGN KEY (TipoCombustibleID) REFERENCES TipoCombustible(TipoCombustibleID);
+
+-- Inserts para los tipos de combustible
+INSERT INTO TipoCombustible (Nombre) VALUES
+    ('Gasolina'),
+    ('Diésel'),
+    ('Gas Licuado de Petróleo (GLP)'),
+    ('Gas Natural'),
+    ('Eléctrico'),
+    -- Agregar más tipos de combustible según sea necesario
+;
