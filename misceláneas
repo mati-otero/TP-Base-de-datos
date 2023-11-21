@@ -1,0 +1,56 @@
+### Identificación de Entidades:
+
+1. **Vehiculos:**
+   - Atributos: VehiculoID (PK), Modelo, Anio, TipoVehiculo, Estado, Kilometraje, TipoCombustibleID (FK), etc.
+
+2. **Clientes:**
+   - Atributos: ClienteID (PK), Nombre, Direccion, Telefono, etc.
+
+3. **Reservas:**
+   - Atributos: ReservaID (PK), ClienteID (FK), VehiculoID (FK), FechaInicio, FechaFin, EstadoReserva, etc.
+
+4. **TipoCombustible:**
+   - Atributos: TipoCombustibleID (PK), Nombre.
+
+### Definición de Relaciones:
+
+- La tabla `Reservas` tiene relaciones con las tablas `Clientes` y `Vehiculos` a través de las claves foráneas `ClienteID` y `VehiculoID`.
+
+- La tabla `Vehiculos` tiene una relación con la tabla `TipoCombustible` a través de la clave foránea `TipoCombustibleID`.
+
+### Diseño del Modelo Entidad-Relación:
+
+```plaintext
++-----------------+       +---------------------+
+|   Vehiculos     |       |   TipoCombustible   |
++-----------------+       +---------------------+
+| VehiculoID (PK) | 1---n | TipoCombustibleID   |
+| Modelo          |       | Nombre              |
+| Anio            |       +---------------------+
+| TipoVehiculo    |
+| Estado          |
+| Kilometraje     |
+| TipoCombustibleID (FK) |
++-----------------+
+
++-----------------+       +-----------------+
+|   Clientes      |       |   Reservas      |
++-----------------+       +-----------------+
+| ClienteID (PK)  | 1---n | ReservaID (PK)  |
+| Nombre          |       | ClienteID (FK) |
+| Direccion       |       | VehiculoID (FK)|
+| Telefono        |       | FechaInicio     |
++-----------------+       | FechaFin        |
+                          | EstadoReserva   |
+                          +-----------------+
+```
+
+### Observaciones:
+
+- Las líneas que conectan las tablas representan las relaciones. La notación `1---n` indica una relación de uno a muchos.
+
+- Las claves primarias (PK) y foráneas (FK) están marcadas en cada tabla. Las claves foráneas establecen relaciones entre las tablas.
+
+- Asegúrate de definir adecuadamente las restricciones de integridad referencial para garantizar la coherencia de los datos.
+
+Este es solo un ejemplo y puede ser necesario ajustar el diseño según las necesidades específicas de tu aplicación y los requisitos de negocio.
