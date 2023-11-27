@@ -1,0 +1,30 @@
+Nueva Entidad y Relaciones para la Facturación:
+Nueva Entidad: Facturas
+
+Atributos: FacturaID (PK), Fecha, MontoTotal, etc.
+Relación: Reservas - Facturas
+
+Una reserva puede estar asociada con una factura (0 a 1, ya que podría no tener factura si no se ha facturado aún), pero una factura está asociada con una sola reserva (1).
+Nueva Entidad: ConceptosFacturables
+
+Atributos: ConceptoID (PK), Descripcion, PrecioUnitario, etc.
+Relación: ConceptosFacturables - Facturas
+
+Un concepto facturable puede estar asociado con muchas facturas (1 a n), pero cada factura está asociada con uno o muchos conceptos facturables (0 a n).
+
+
+
+
+Descripción de las Relaciones:
+Reservas - Facturas:
+
+Una reserva puede tener una factura (si ha sido facturada) o ninguna (si aún no ha sido facturada). Una factura está asociada con una sola reserva.
+ConceptosFacturables - Facturas:
+
+Cada factura puede contener uno o muchos conceptos facturables. Un concepto facturable puede estar presente en muchas facturas.
+Reservas - ReservasFacturas:
+
+Una relación de unión que asocia reservas con facturas. Puedes utilizar esta tabla para manejar la relación muchos a muchos entre reservas y facturas.
+Facturas - DetallesFactura:
+
+Esta relación representa los detalles específicos de la factura, como los conceptos facturables y la cantidad asociada.
