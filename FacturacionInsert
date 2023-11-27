@@ -1,0 +1,32 @@
+-- Agregar la tabla Facturas
+CREATE TABLE IF NOT EXISTS Facturas (
+    FacturaID INT PRIMARY KEY AUTO_INCREMENT,
+    Fecha DATE,
+    MontoTotal DECIMAL(10, 2) NOT NULL
+);
+
+-- Agregar la tabla ConceptosFacturables
+CREATE TABLE IF NOT EXISTS ConceptosFacturables (
+    ConceptoID INT PRIMARY KEY AUTO_INCREMENT,
+    Descripcion VARCHAR(255) NOT NULL,
+    PrecioUnitario DECIMAL(10, 2) NOT NULL
+);
+
+-- Agregar la tabla ReservasFacturas (tabla de unión)
+CREATE TABLE IF NOT EXISTS ReservasFacturas (
+    ReservaID INT,
+    FacturaID INT,
+    PRIMARY KEY (ReservaID, FacturaID),
+    FOREIGN KEY (ReservaID) REFERENCES Reservas(ReservaID),
+    FOREIGN KEY (FacturaID) REFERENCES Facturas(FacturaID)
+);
+
+-- Agregar la tabla DetallesFactura
+CREATE TABLE IF NOT EXISTS DetallesFactura (
+    DetalleID INT PRIMARY KEY AUTO_INCREMENT,
+    FacturaID INT,
+    ConceptoID INT,
+    Cantidad INT,
+    FOREIGN KEY (FacturaID) REFERENCES Facturas(FacturaID),
+    FOREIGN KEY (ConceptoID) REFERENCES ConceptosFacturables(ConceptoID)
+);
